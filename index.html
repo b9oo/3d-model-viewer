@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Viewer Website</title>
+    
+    <!-- 1. Import the Google Model Viewer Script -->
+    <script type="module" src="https://googleapis.com"></script>
+
+    <style>
+        /* Basic reset and centering styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f5f5f7;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* 2. Style the 3D viewer container */
+        model-viewer {
+            width: 600px;
+            height: 400px;
+            max-width: 100%;
+            background-color: #fafafa;
+            border-radius: 8px;
+            --poster-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Interactive 3D Product View</h1>
+        <p>Drag to rotate. Scroll to zoom.</p>
+
+        <!-- 3. The 3D Model Element -->
+        <!-- Replace "your-model.glb" with the actual path to your file -->
+        <model-viewer 
+            src="your-model.glb" 
+            alt="A 3D model description" 
+            camera-controls 
+            auto-rotate 
+            ar 
+            shadow-intensity="1">
+        </model-viewer>
+    </div>
+
+</body>
+</html>
